@@ -1,0 +1,30 @@
+<%= simple_form_for(@profile) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :name %>
+    <%= f.date_select :dob,  {:order => [:day, :month, :year],:prompt => true, :start_year => 1970, :end_year => Time.now.year} %>
+    <%= f.input :address %>
+    <%= f.input :email %>
+    <%= f.input :Phone %>
+    
+
+    <label>My Image</label>
+    <%= image_tag(current_user.profile.image.url) if current_user.profile.image? %>
+      <label>
+      <%= f.check_box :image_delete %>
+      Remove Image
+    </label>
+  </p>
+
+  <p>
+  <%= f.file_field :image, accept: "image/*", class: "btn btn-sm text-center" %>
+    
+  </p>
+
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

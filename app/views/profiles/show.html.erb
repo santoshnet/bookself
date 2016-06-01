@@ -1,0 +1,37 @@
+<p id="notice"><%= notice %></p>
+
+<p>  
+  <% if @profile.image.present? %>
+  <%= image_tag @profile.image %>
+  <% else %>
+  <%= image_tag "default.png" %>
+  <% end %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @profile.name %>
+</p>
+
+<p>
+  <strong>Dob:</strong>
+  <%= @profile.dob %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @profile.address %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @profile.email %>
+</p>
+
+<p>
+  <strong>Phone:</strong>
+  <%= @profile.Phone %>
+</p>
+
+<%= link_to 'Edit', edit_profile_path(@profile) %> |
+<%= link_to 'Back', books_path %>
